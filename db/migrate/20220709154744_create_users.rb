@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :email
       t.string :sms
-      t.integer :notify
+      t.integer :notify, default: 0
 
       t.timestamps
     end
