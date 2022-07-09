@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # app/serializers/med_serializer.#!/usr/bin/env ruby -wKU
 class MedSerializer
   include JSONAPI::Serializer
