@@ -9,22 +9,25 @@ describe "Meds API" do
     get '/api/v1/meds'
 
     expect(response).to be_successful
-    meds = JSON.parse(response.body, symbolize_names: true)
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    meds = response_body[:data]
 
     expect(meds.count).to eq(3)
 
     meds.each do |med|
      expect(med).to have_key(:id)
-     expect(med[:id]).to be_an(Integer)
+     expect(med[:id]).to be_a(String)
+     expect(med[:type]).to be_a(String)
+     expect(med[:attributes]).to be_a(Hash)
 
-     expect(med).to have_key(:name)
-     expect(med[:name]).to be_a(String)
+     expect(med[:attributes]).to have_key(:name)
+     expect(med[:attributes][:name]).to be_a(String)
 
-     expect(med).to have_key(:dose)
-     expect(med[:dose]).to be_a(String)
+     expect(med[:attributes]).to have_key(:dose)
+     expect(med[:attributes][:dose]).to be_a(String)
 
-     expect(med).to have_key(:time_between_dose)
-     expect(med[:time_between_dose]).to be_an(Integer)
+     expect(med[:attributes]).to have_key(:time_between_dose)
+     expect(med[:attributes][:time_between_dose]).to be_an(Integer)
 
    end
   end

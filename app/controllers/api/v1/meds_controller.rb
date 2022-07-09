@@ -2,7 +2,7 @@
 class Api::V1::MedsController < ApplicationController
 
   def index
-    render json: Medication.all
+    render json: MedSerializer.new(Medication.all), status: :ok
   end
 
 end
