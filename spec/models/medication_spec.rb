@@ -3,5 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Medication, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'validations' do
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :dose }
+    it { should validate_presence_of :time_between_dose }
+  end
 end
