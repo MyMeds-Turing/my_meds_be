@@ -45,6 +45,7 @@ group :development, :test do
   # linting
   gem 'rubocop'
   gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :development do
