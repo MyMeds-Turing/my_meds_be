@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 20_220_710_163_021) do
     t.integer 'total_doses'
     t.integer 'doses_remaining'
     t.integer 'max_daily_doses'
-    t.text 'instructions'
+    t.text 'user_instructions'
+    t.text 'doctor_instructions'
     t.integer 'time_between_dose'
+    t.string 'icon'
     t.bigint 'user_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
