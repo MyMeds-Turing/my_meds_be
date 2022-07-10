@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/Metrics/MethodLength
+
+# comment for rubocop
 class CreatePrescriptions < ActiveRecord::Migration[5.2]
   def change
     create_table :prescriptions do |t|
@@ -15,3 +20,5 @@ class CreatePrescriptions < ActiveRecord::Migration[5.2]
     end
   end
 end
+
+# rubocop:enable Metrics/Metrics/MethodLength
