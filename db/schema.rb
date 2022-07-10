@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_09_172043) do
+ActiveRecord::Schema.define(version: 2022_07_10_163021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "prescriptions", force: :cascade do |t|
     t.string "med_name"
-    t.time "time_of_last_dose"
-    t.time "time_of_next_dose"
+    t.datetime "time_of_last_dose"
+    t.datetime "time_of_next_dose"
     t.integer "total_doses"
     t.integer "doses_remaining"
     t.integer "max_daily_doses"
@@ -40,4 +40,5 @@ ActiveRecord::Schema.define(version: 2022_07_09_172043) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "prescriptions", "users"
 end
