@@ -29,7 +29,7 @@ module Api
       private
 
       def med_params
-        params.permit(:name, :dose, :time_between_dose)
+        params.require(:med).permit(:name, :dose, :time_between_dose)
       end
     end
   end

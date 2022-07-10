@@ -52,5 +52,24 @@ describe 'Meds API' do
     expect(data_response[:attributes][:name]).to eq(med.name)
     expect(data_response[:id]).to_not eq(med2.id)
   end
+  it 'can create a new med' do
+    med_params = {
+      name: 'Asprin',
+      dose: '200 mg',
+      time_between_dose: 4
+    }
+
+    headers = { 'CONTENT_TYPE' => 'application/json' }
+    # include this header to make sure params are passed as JSON rather than as plain text
+
+    post '/api/v1/meds', headers: headers, params: JSON.generate(med: med_params)
+
+    created_med = Medication.last
+
+    expect(response).to be_successful
+    expect(created_med.name).to eq(med_params[:name])
+    expect(created_med.dose).to eq(med_params[:dose])
+    expect(created_med.time_between_dose).to eq(med_params[:time_between_dose])
+  end
 end
 # rubocop:enable Metrics/BlockLength
