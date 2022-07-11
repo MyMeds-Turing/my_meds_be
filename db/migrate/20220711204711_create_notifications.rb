@@ -3,7 +3,7 @@ class CreateNotifications < ActiveRecord::Migration[5.2]
     create_table :notifications do |t|
       t.string :recipient
       t.datetime :sent_at
-      t.string :type
+      t.string :notification_type
 
       t.timestamps
     end

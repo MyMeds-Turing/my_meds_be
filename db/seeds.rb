@@ -7,10 +7,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Notification.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('notifications')
 Prescription.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('prescriptions')
 User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
+
+Notification.create!(recipient: 'John', sent_at: Time.now, notification_type: 'sms')
+Notification.create!(recipient: 'John', sent_at: Time.now, notification_type: 'email')
 
 user = User.create!(first_name: 'John', last_name: 'H', email: 'John.H@email.com',
                     sms: '5551234567', notify: 3)
