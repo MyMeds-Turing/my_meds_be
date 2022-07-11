@@ -15,7 +15,7 @@ User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 
 Notification.create!(recipient: 'John', sent_at: Time.now, notification_type: 'sms')
-Notification.create!(recipient: 'John', sent_at: Time.now, notification_type: 'email')
+Notification.create!(recipient: 'John H', sent_at: Time.now, notification_type: 'email')
 
 user = User.create!(first_name: 'John', last_name: 'H', email: 'John.H@email.com',
                     sms: '5551234567', notify: 3)
