@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Queries
   class FetchNotification < Queries::BaseQuery
     type Types::NotificationType, null: false

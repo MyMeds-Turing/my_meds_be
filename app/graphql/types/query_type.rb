@@ -10,6 +10,5 @@ module Types
 
     field :fetch_notifications, resolver: Queries::FetchNotifications
     field :fetch_notification, resolver: Queries::FetchNotification
-
   end
 end

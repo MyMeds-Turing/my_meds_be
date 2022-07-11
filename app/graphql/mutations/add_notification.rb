@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   class AddNotification < Mutations::BaseMutation
     argument :params, Types::Input::NotificationInputType, required: true
