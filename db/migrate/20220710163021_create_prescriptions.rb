@@ -12,8 +12,9 @@ class CreatePrescriptions < ActiveRecord::Migration[5.2]
       t.integer :total_doses
       t.integer :doses_remaining
       t.integer :max_daily_doses
+      t.string :dose
       t.text :user_instructions
-      t.text :doctor_instructions
+      t.text :additional_instructions
       t.integer :time_between_dose
       t.string :icon
       t.references :user, foreign_key: true

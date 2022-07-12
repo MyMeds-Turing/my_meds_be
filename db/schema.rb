@@ -12,9 +12,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_710_163_021) do
+ActiveRecord::Schema.define(version: 20_220_711_204_711) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'notifications', force: :cascade do |t|
+    t.string 'recipient'
+    t.datetime 'sent_at'
+    t.string 'notification_type'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
 
   create_table 'prescriptions', force: :cascade do |t|
     t.string 'med_name'
@@ -23,8 +31,9 @@ ActiveRecord::Schema.define(version: 20_220_710_163_021) do
     t.integer 'total_doses'
     t.integer 'doses_remaining'
     t.integer 'max_daily_doses'
+    t.string 'dose'
     t.text 'user_instructions'
-    t.text 'doctor_instructions'
+    t.text 'additional_instructions'
     t.integer 'time_between_dose'
     t.string 'icon'
     t.bigint 'user_id'
