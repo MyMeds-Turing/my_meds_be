@@ -11,6 +11,7 @@ RSpec.describe Prescription, type: :model do
     it { should validate_presence_of :total_doses }
     it { should validate_presence_of :doses_remaining }
     it { should validate_presence_of :max_daily_doses }
+    it { should validate_presence_of :dose }
     it { should validate_presence_of :user_instructions }
     it { should validate_presence_of :additional_instructions }
     it { should validate_presence_of :time_between_dose }
