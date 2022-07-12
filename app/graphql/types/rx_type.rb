@@ -9,8 +9,9 @@ module Types
     field :total_doses, Integer
     field :doses_remaining, Integer
     field :max_daily_doses, Integer
+    field :dose, String
     field :user_instructions, String
-    field :doctor_instructions, String
+    field :additional_instructions, String
     field :time_between_dose, Integer
     field :icon, String
     field :user_id, Integer
