@@ -3,7 +3,7 @@
 module Queries
   class FetchRxs < Queries::BaseQuery
     type [Types::RxType],
-    null: false
+         null: false
 
     def resolve
       Prescription.all
