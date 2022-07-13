@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module Queries
-  class FetchUser < Queries::BaseQuery
-    type Types::UserType, null: false
-    argument :id, ID, required: true
+  class FetchUsers < Queries::BaseQuery
+    type [Types::UserType], null: false
 
-    def resolve(id:)
-      User.find(id)
+    def resolve
+      User.all
+
     rescue ActiveRecord::RecordNotFound => _e
       GraphQL::ExecutionError.new('User does not exist.')
     rescue ActiveRecord::RecordInvalid => e
