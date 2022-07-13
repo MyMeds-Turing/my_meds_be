@@ -10,7 +10,9 @@ module Types
 
     field :fetch_notifications, resolver: Queries::FetchNotifications
     field :fetch_notification, resolver: Queries::FetchNotification
-    field :Rxs, resolver: Queries::FetchRxs
+    field :fetch_rxs, resolver: Queries::FetchRxs
     field :fetch_user, resolver: Queries::FetchUser
+    field :fetch_user_rxs, resolver: Queries::FetchUserRxs
+
   end
 end
