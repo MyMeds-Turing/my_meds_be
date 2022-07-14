@@ -14,6 +14,5 @@ module Types
     field :fetch_user, resolver: Queries::FetchUser
     field :fetch_users, resolver: Queries::FetchUsers
     field :fetch_user_rxs, resolver: Queries::FetchUserRxs
-
   end
 end

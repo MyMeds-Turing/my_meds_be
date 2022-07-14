@@ -8,5 +8,5 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 GraphQL::RakeTask.new(
-  schema_name: 'MyMedsBeSchema', # this needs to be your generated schema class name
+  schema_name: 'MyMedsBeSchema' # this needs to be your generated schema class name
 )
