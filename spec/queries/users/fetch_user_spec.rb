@@ -5,10 +5,10 @@ require 'rails_helper'
 RSpec.describe Types::QueryType do
   describe 'display users' do
     it 'can query a single user by id' do
-      user = User.create!(id: 1, first_name: 'John', last_name: 'L', email: 'John.L@email.com',
-                          sms: '5551234567', notify: 3)
-      user2 = User.create!(first_name: 'Paul', last_name: 'M', email: 'Paul.M@email.com',
-                           sms: '5551234567', notify: 3)
+      User.create!(id: 1, first_name: 'John', last_name: 'L', email: 'John.L@email.com',
+                   sms: '5551234567', notify: 3)
+      User.create!(first_name: 'Paul', last_name: 'M', email: 'Paul.M@email.com',
+                   sms: '5551234567', notify: 3)
 
       result = MyMedsBeSchema.execute(query).as_json
       expect(result['data']['fetchUser'].count).to eq(9)
@@ -17,12 +17,10 @@ RSpec.describe Types::QueryType do
     it 'returns an error response for user not found' do
       result = MyMedsBeSchema.execute(query).as_json
       expect(result['errors'][0]['message']).to eq('User does not exist.')
-
     end
     it 'returns an error response for invaild attribute' do
       result = MyMedsBeSchema.execute(missing_attribute_query).as_json
       expect(result['errors'][0]['message']).to eq("Field 'foo' doesn't exist on type 'User'")
-
     end
   end
 

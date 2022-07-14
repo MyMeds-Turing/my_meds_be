@@ -14,7 +14,6 @@ RSpec.describe Types::QueryType do
                            additional_instructions: 'take 2 call me in the morning', time_between_dose: 240,
                            icon: 'path_to_icon')
 
-
       result = MyMedsBeSchema.execute(query).as_json
       expect(result['data']['fetchRxs'].count).to eq(1)
       expect(result['data']['fetchRxs'][0]['medName']).to eq('Tylenol')
@@ -23,25 +22,25 @@ RSpec.describe Types::QueryType do
 
   def query
     <<~GQL
-    {
-      fetchRxs {
-        id
-        medName
-        timeOfLastDose
-        timeOfNextDose
-        totalDoses
-        dosesRemaining
-        maxDailyDoses
-        dose
-        userInstructions
-        additionalInstructions
-        timeBetweenDose
-        icon
-        userId
-        createdAt
-        updatedAt
+      {
+        fetchRxs {
+          id
+          medName
+          timeOfLastDose
+          timeOfNextDose
+          totalDoses
+          dosesRemaining
+          maxDailyDoses
+          dose
+          userInstructions
+          additionalInstructions
+          timeBetweenDose
+          icon
+          userId
+          createdAt
+          updatedAt
+        }
       }
-    }
     GQL
   end
 end
