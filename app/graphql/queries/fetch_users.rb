@@ -6,7 +6,6 @@ module Queries
 
     def resolve
       User.all
-
     rescue ActiveRecord::RecordNotFound => _e
       GraphQL::ExecutionError.new('User does not exist.')
     rescue ActiveRecord::RecordInvalid => e
