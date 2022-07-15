@@ -7,7 +7,6 @@ module Queries
 
     def resolve(id:)
       Prescription.where('user_id = ?', id)
-
     rescue ActiveRecord::RecordNotFound => _e
       GraphQL::ExecutionError.new('Rx does not exist.')
     rescue ActiveRecord::RecordInvalid => e
