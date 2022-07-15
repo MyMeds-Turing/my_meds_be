@@ -7,9 +7,8 @@ module Mutations
 
     def resolve(params:)
       prescription_params = Hash params
-
       begin
-        rx = Prescription.create!(params)
+        rx = Prescription.create!(prescription_params)
 
         { rx: rx }
       rescue ActiveRecord::RecordInvalid => e
