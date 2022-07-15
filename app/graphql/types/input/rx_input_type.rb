@@ -3,7 +3,6 @@
 module Types
   module Input
     class RxInputType < Types::BaseInputObject
-      argument :id, ID, required: true
       argument :med_name, String
       argument :time_of_last_dose, GraphQL::Types::ISO8601DateTime
       argument :time_of_next_dose, GraphQL::Types::ISO8601DateTime
@@ -15,6 +14,7 @@ module Types
       argument :additional_instructions, String
       argument :time_between_dose, Integer
       argument :icon, String
+      argument :user_id, Integer
     end
   end
 end
