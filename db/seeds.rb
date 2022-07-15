@@ -54,7 +54,7 @@ Prescription.create!(user_id: user2.id, med_name: 'Motrin Extra-Strength', time_
                      icon: 'path_to_icon')
 
 Prescription.create!(user_id: user.id, med_name: 'Motrin Extra-Strength', time_of_last_dose: Time.current,
-                    time_of_next_dose: 16.days.from_now, total_doses: 100, doses_remaining: 250,
-                    max_daily_doses: 4, dose: '500 mg', user_instructions: 'take pill, take with food',
-                    additional_instructions: 'take 2 call me in the morning', time_between_dose: 240,
-                    icon: 'path_to_icon')
+                     time_of_next_dose: 16.days.from_now, total_doses: 100, doses_remaining: 250,
+                     max_daily_doses: 4, dose: '500 mg', user_instructions: 'take pill, take with food',
+                     additional_instructions: 'take 2 call me in the morning', time_between_dose: 240,
+                     icon: 'path_to_icon')
