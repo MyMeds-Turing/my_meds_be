@@ -8,7 +8,6 @@ module Mutations
     def resolve(params:)
       prescription_params = Hash params
       begin
-      binding.pry
         rx = Prescription.create!(prescription_params)
 
         { rx: rx }
