@@ -7,8 +7,8 @@ class CreatePrescriptions < ActiveRecord::Migration[5.2]
   def change
     create_table :prescriptions do |t|
       t.string :med_name
-      t.datetime :time_of_last_dose
-      t.datetime :time_of_next_dose
+      t.datetime :time_of_last_dose, :default => Time.now
+      t.datetime :time_of_next_dose, :default => Time.now
       t.integer :total_doses
       t.integer :doses_remaining
       t.integer :max_daily_doses

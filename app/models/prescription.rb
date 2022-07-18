@@ -14,6 +14,13 @@ class Prescription < ApplicationRecord
   #  validates_presence_of :time_between_dose
   #  validates_presence_of :icon
   validates_presence_of :user_id
-
   belongs_to :user
+
+  before_validation :set_doses_remaining, on: :create
+
+  private
+    def set_doses_remaining
+      self.doses_remaining = self.total_doses
+    end
+
 end
