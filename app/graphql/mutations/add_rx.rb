@@ -2,7 +2,7 @@
 
 module Mutations
   class AddRx < Mutations::BaseMutation
-    argument :params, Types::Input::RxInputType, required: true
+    argument :params, Types::Input::RxInputType, required: false
     field :rx, Types::RxType, null: false
 
     def resolve(params:)

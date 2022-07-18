@@ -20,18 +20,18 @@ module Mutations
     #    end
 
     argument :id, ID, required: true
-    argument :med_name, String
-    argument :time_of_last_dose, GraphQL::Types::ISO8601DateTime
-    argument :time_of_next_dose, GraphQL::Types::ISO8601DateTime
-    argument :total_doses, Integer
-    argument :doses_remaining, Integer
-    argument :max_daily_doses, Integer
-    argument :dose, String
-    argument :user_instructions, String
-    argument :additional_instructions, String
-    argument :time_between_dose, Integer
-    argument :icon, String
-    argument :user_id, Integer
+    argument :med_name, String, required: false
+    argument :time_of_last_dose, GraphQL::Types::ISO8601DateTime, required: false
+    argument :time_of_next_dose, GraphQL::Types::ISO8601DateTime, required: false
+    argument :total_doses, Integer, required: false
+    argument :doses_remaining, Integer, required: false
+    argument :max_daily_doses, Integer, required: false
+    argument :dose, String, required: false
+    argument :user_instructions, String, required: false
+    argument :additional_instructions, String, required: false
+    argument :time_between_dose, Integer, required: false
+    argument :icon, String, required: false
+    argument :user_id, Integer, required: false
 
     type Types::RxType
 
