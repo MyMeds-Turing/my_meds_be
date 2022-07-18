@@ -255,3 +255,42 @@ Our GraphQL endpoints fall into two categories: queries and mutations.
   }
 }
 ```
+
+## Mutations
+1. [**addRx**](#addrx) *creates an entry in the prescription table*
+* Available input fields
+```
+mutation {
+     addRx(input: { params: {
+        medName: "Asprin",
+        totalDoses: 100,
+        maxDailyDoses: 12,
+        dose: "25 mg",
+        userInstructions: "takepill, take with food",
+        additionalInstructions: "take 2 a day",
+        timeBetweenDose: 15,
+        icon: "path_to_icon",
+        userId: 1   
+    }}){
+    rx {
+        id
+        medName
+    }
+    }
+    }
+```
+  * Example Response
+```  
+{
+    "data": {
+        "addRx": {
+            "rx": {
+                "id": "9",
+                "medName": "Asprin"
+            }
+        }
+    }
+}
+```
+2. [**updateRx**](#updaterx) *updates an entry in the prescription table*
+* Available input fields
