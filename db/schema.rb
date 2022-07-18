@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20_220_711_204_711) do
 
   create_table 'prescriptions', force: :cascade do |t|
     t.string 'med_name'
-    t.datetime 'time_of_last_dose'
-    t.datetime 'time_of_next_dose'
+    t.datetime 'time_of_last_dose', default: '2022-07-18 13:18:36'
+    t.datetime 'time_of_next_dose', default: '2022-07-18 13:18:36'
     t.integer 'total_doses'
     t.integer 'doses_remaining'
     t.integer 'max_daily_doses'
