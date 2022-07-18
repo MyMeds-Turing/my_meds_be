@@ -36,7 +36,7 @@ Prescription.create!(user_id: user2.id, med_name: 'Tylenol', time_of_last_dose: 
                      icon: 'path_to_icon')
 
 Prescription.create!(user_id: user.id, med_name: 'OxyContin', time_of_last_dose: Time.current,
-                     time_of_next_dose: 2.days.from_now, total_doses: 25, doses_remaining: 25,
+                     time_of_next_dose: 2.days.from_now, total_doses: 25, doses_remaining: 2,
                      max_daily_doses: 4, dose: '5 mg', user_instructions: 'take pill, take with food',
                      additional_instructions: 'take 2 call me in the morning', time_between_dose: 240,
                      icon: 'path_to_icon')
