@@ -19,8 +19,8 @@ class Prescription < ApplicationRecord
   before_validation :set_doses_remaining, on: :create
 
   private
-    def set_doses_remaining
-      self.doses_remaining = self.total_doses
-    end
 
+  def set_doses_remaining
+    self.doses_remaining = total_doses
+  end
 end
