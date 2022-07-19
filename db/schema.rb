@@ -23,22 +23,22 @@ ActiveRecord::Schema.define(version: 2022_07_11_204711) do
     t.datetime "updated_at", null: false
   end
 
-  create_table 'prescriptions', force: :cascade do |t|
-    t.string 'med_name'
-    t.datetime 'time_of_last_dose', default: '2022-07-18 13:18:36'
-    t.datetime 'time_of_next_dose', default: '2022-07-18 13:18:36'
-    t.integer 'total_doses'
-    t.integer 'doses_remaining'
-    t.integer 'max_daily_doses'
-    t.string 'dose'
-    t.text 'user_instructions'
-    t.text 'additional_instructions'
-    t.integer 'time_between_dose'
-    t.string 'icon'
-    t.bigint 'user_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['user_id'], name: 'index_prescriptions_on_user_id'
+  create_table "prescriptions", force: :cascade do |t|
+    t.string "med_name"
+    t.datetime "time_of_last_dose", default: "2022-07-19 01:17:22"
+    t.datetime "time_of_next_dose", default: "2022-07-19 01:17:22"
+    t.integer "total_doses"
+    t.integer "doses_remaining"
+    t.integer "max_daily_doses"
+    t.string "dose"
+    t.text "user_instructions"
+    t.text "additional_instructions"
+    t.integer "time_between_dose"
+    t.string "icon"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_prescriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
