@@ -14,7 +14,6 @@ module Mutations
         attributes[:time_of_next_dose] = time + rx.time_between_dose.minutes
         attributes[:doses_remaining] = rx.doses_remaining - 1
         rx.update(attributes)
-        binding.pry
         rx
       end
       # call the mailer
