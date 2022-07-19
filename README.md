@@ -255,9 +255,28 @@ Our GraphQL endpoints fall into two categories: queries and mutations.
   }
 }
 ```
+### Mutations
 
-## Mutations
-1. [**addRx**](#addrx) *creates an entry in the prescription table*
+1. [**deleteRx(id: ID)**](#delete-rx) *Deletes a prescription from the database*
+* Example Mutation
+```
+{
+  deleteRx(input: {id: 1}  ) {
+          id
+        }
+      }
+```
+  * Example Response
+```
+{
+  "data": {
+    "deleteRx": {
+      "id": "1"
+    }
+  }
+}
+```
+2. [**addRx**](#addrx) *creates an entry in the prescription table*
 * Available input fields
 ```
 mutation {
@@ -292,5 +311,5 @@ mutation {
     }
 }
 ```
-2. [**updateRx**](#updaterx) *updates an entry in the prescription table*
+3. [**updateRx**](#updaterx) *updates an entry in the prescription table*
 * Available input fields
