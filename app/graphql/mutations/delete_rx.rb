@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   class DeleteRx < Mutations::BaseMutation
     argument :id, ID, required: true
@@ -5,7 +7,7 @@ module Mutations
 
     def resolve(id)
       rx = Prescription.find_by(id)
-      rx.destroy
+      rx&.destroy
     end
   end
 end
