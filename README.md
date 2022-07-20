@@ -1,4 +1,19 @@
-# README
+# My Meds API and Database
+This repository is a GraphQL Database and API for the purpose of connecting to the web application My Meds.
+
+## Disclaimer
+This project is designed for usage with a specific front-end React application.  If using it for your own project, please provide credit to:
+John Hennerich (jhennerich), Zel Imbriaco (zel-imbriaco), Maximillian Wagner (MWagner3), and Katy Harrod (mcharrod).
+
+## Usage Instructions
+To install the My Meds Database for your own personal usage, please do the following:
+1. Fork this repository.
+2. Clone your forked repository to your desired back-end hardware.
+3. In the terminal, navigate to the `my_meds_be` folder and run `bundle install`.
+4. While still in the terminal, run `rails db:{drop,create,migrate,seed}` to populate your database with seed data.`
+5. Make any changes to the database as necessary, and deploy to your database-hosting service of choice.
+
+
 ## GraphQL
 Our GraphQL endpoints fall into two categories: queries and mutations.
 
