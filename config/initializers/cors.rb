@@ -13,6 +13,13 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 
     resource '*',
              headers: :any,
-             methods: %i[get post put patch delete options head]
+             methods: %i[post options head]
+  end
+
+  allow do
+    origins 'https://mymeds-turing.github.io'
+    resource '*',
+             headers: :any,
+             methods: %i[post options head]
   end
 end
