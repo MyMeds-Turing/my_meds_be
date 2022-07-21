@@ -18,6 +18,8 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
   }
+  config.action_mailer.raise_delivery_errors = true
+
   # Do not eager load code on boot.
   config.eager_load = false
 

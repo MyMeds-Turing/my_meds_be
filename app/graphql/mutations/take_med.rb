@@ -21,7 +21,6 @@ module Mutations
 
         rx.update(attributes)
         user = User.find(rx.user_id)
-        # binding.pry
         recipient = user.email
         info = {
           med_name: rx.med_name,
@@ -29,13 +28,9 @@ module Mutations
           message: 'visit https://mymeds-turing.github.io/my_meds_fe/ to see more',
           name: user.first_name
         }
-        # binding.pry
         MedNotifierMailer.inform(info, recipient).deliver_now
         rx
       end
-      # call the mailer
-      # call the sms
-      # Notification.create .....
     end
   end
 end
