@@ -18,9 +18,18 @@ module Mutations
         else
           attributes[:doses_remaining] = 0
         end
-        
+
         rx.update(attributes)
         rx
+        user = User.find(rx.user_id)
+        recipient = user.email
+        mailer = MedNotifierMailer.new
+        info = {
+          med_name: rx.med_name,
+          time_of_last_dose: rx.time_of_last_dose,
+          message: 'visit https://mymeds-turing.github.io/my_meds_fe/ to see more'
+        }
+        mailer.inform(info)
       end
       # call the mailer
       # call the sms
