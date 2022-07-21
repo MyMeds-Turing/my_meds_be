@@ -5,7 +5,7 @@
 ![ruby](https://img.shields.io/badge/Ruby-2.7.4-red)
 ![rails](https://img.shields.io/badge/Rails-5.2.8-red)
 ![rspec](https://img.shields.io/badge/RSpec-3.11.0-green)
-![contributors](https://img.shields.io/badge/Contributors-4-yellow)
+![contributors](https://img.shields.io/badge/Contributors-3-yellow)
 
 ## **Background and Description**
 This repository implements a GraphQL API and PostgreSQL database providing a micro-service for the [MyMeds FE](https://github.com/MyMeds-Turing/my_meds_fe) web application.
@@ -24,7 +24,7 @@ John Hennerich (jhennerich), Zel Imbriaco (zel-imbriaco), Maximillian Wagner (MW
 - [GraphQL Endpoints](#graphql)
     - [Queries](#queries)
     - [Mutations](#mutations)
-- [Future Iteration Goals](future-iteration-goals)
+- [Future Iteration Goals](#future-iteration-goals)
 - [Contributors](#contributors)
 ## **Schema**
 ![plot](./docs/images/my_meds_be.png)
