@@ -16,10 +16,10 @@ RSpec.describe Types::QueryType do
       expect(result['data']['fetchUsers'][0]['fullName']).to eq('John L')
       expect(result['data']['fetchUsers'][1]['fullName']).to eq('Paul M')
     end
-    xit 'returns an error response for invaild attribute' do
-      result = MyMedsBeSchema.execute(query).as_json
-      expect(result['errors'][0]['message']).to eq('Users do not exist.')
-    end
+    # it 'returns an error response for invaild attribute' do
+    #  result = MyMedsBeSchema.execute(query).as_json
+    #  expect(result['errors'][0]['message']).to eq('Users do not exist.')
+    # end
   end
 
   def query
