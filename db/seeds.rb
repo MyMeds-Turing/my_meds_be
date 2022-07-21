@@ -30,13 +30,13 @@ user4 = User.create!(first_name: 'Ringo', last_name: 'Starr', email: 'Ringo.Star
                      sms: '5551234567', notify: 3)
 
 user5 = User.create!(first_name: 'Max', last_name: 'Tester', email: 'maw@gmail.com',
-                                         sms: '1234567890', notify: 3)
+                     sms: '1234567890', notify: 3)
 
-Prescription.create!(user_id: user.id, med_name: 'Tylenol', time_of_last_dose: Time.current,
-                    time_of_next_dose: 1.days.from_now, total_doses: 500, doses_remaining: 500,
-                    max_daily_doses: 6, dose: '200 mg', user_instructions: 'take pill, take with food',
-                    additional_instructions: 'take 2 call me in the morning', time_between_dose: 2,
-                    icon: 'path_to_icon')
+Prescription.create!(user_id: user5.id, med_name: 'Tylenol', time_of_last_dose: Time.current,
+                     time_of_next_dose: 1.days.from_now, total_doses: 500, doses_remaining: 500,
+                     max_daily_doses: 6, dose: '200 mg', user_instructions: 'take pill, take with food',
+                     additional_instructions: 'take 2 call me in the morning', time_between_dose: 2,
+                     icon: 'path_to_icon')
 
 Prescription.create!(user_id: user.id, med_name: 'Tylenol', time_of_last_dose: Time.current,
                      time_of_next_dose: 1.days.from_now, total_doses: 500, doses_remaining: 500,
