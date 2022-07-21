@@ -1,4 +1,19 @@
-# README
+# My Meds API and Database
+This repository is a GraphQL Database and API for the purpose of connecting to the web application My Meds.
+
+## Disclaimer
+This project is designed for usage with a specific front-end React application.  If using it for your own project, please provide credit to:
+John Hennerich (jhennerich), Zel Imbriaco (zel-imbriaco), Maximillian Wagner (MWagner3), and Katy Harrod (mcharrod).
+
+## Usage Instructions
+To install the My Meds Database for your own personal usage, please do the following:
+1. Fork this repository.
+2. Clone your forked repository to your desired back-end hardware.
+3. In the terminal, navigate to the `my_meds_be` folder and run `bundle install`.
+4. While still in the terminal, run `rails db:{drop,create,migrate,seed}` to populate your database with seed data.`
+5. Make any changes to the database as necessary, and deploy to your database-hosting service of choice.
+
+
 ## GraphQL
 Our GraphQL endpoints fall into two categories: queries and mutations.
 
@@ -313,3 +328,74 @@ mutation {
 ```
 3. [**updateRx**](#updaterx) *updates an entry in the prescription table*
 * Available input fields
+```
+mutation {
+     rx: updateRx(
+        input: {
+         id: 11
+         medName: "Adult Asprin",
+        timeOfLastDose: "2022-07-15T04:03:27Z",
+        timeOfNextDose: "2022-07-15T04:03:27Z"
+        totalDoses: 100,
+        dosesRemaining: 100,
+        maxDailyDoses: 12,
+        dose: "25 mg",
+        userInstructions: "takepill, take with food",
+        additionalInstructions: "take 2 a day",
+        timeBetweenDose: 15,
+        icon: "path_to_icon",
+        userId: 1   
+     }
+     ){           
+        id
+        medName
+        dosesRemaining
+        }
+     }
+ ```
+ * Example Response
+ ```
+{
+    "data": {
+        "addRx": {
+            "rx": {
+                "id": "9",
+                "medName": "Asprin"
+            }
+        }
+    }
+}
+```
+4. [**takeMed**](#takemed) *Reduces remaining doses by one.*
+* Example Query
+```
+mutation {
+        takeMed(input: {id: 3}  ) {
+          id
+          medName
+          timeOfLastDose
+          timeOfNextDose
+          dosesRemaining
+          userId
+        } 
+  
+      }
+```
+* Example Response
+```
+{
+  "data": {
+    "takeMed": {
+      "id": "3",
+      "medName": "Tylenol",
+      "timeOfLastDose": "2022-07-19T20:35:25Z",
+      "timeOfNextDose": "2022-07-20T00:35:25Z",
+      "dosesRemaining": 490,
+      "userId": 3
+    }
+  }
+}
+```
+## Future Iteration Goals
+* SMS and email reminders when it is time for users to take their medication. 
+* SMS and email reminders when users are running low on stock of a specific medication and need to get a refill from their doctor. 
