@@ -41,11 +41,12 @@ module Mutations
         MedNotifierMailer.inform(info, recipient).deliver_now
         #MedReminderMailer.inform(info, recipient).deliver_later(wait: rx.time_between_dose.minutes)
       elsif user.notify == 'sms_only'
-        SendSmsJob.set(wait: rx.time_between_dose.minutes).perform_later(user.sms, rx.med_name)
+#        SendSmsJob.set(wait: rx.time_between_dose.minutes).perform_later(user.sms, rx.med_name)
       elsif user.notify == 'both'
         MedNotifierMailer.inform(info, recipient).deliver_now
 #        MedReminderMailer.inform(info, recipient).deliver_later(wait: rx.time_between_dose.minutes)
-        SendSmsJob.set(wait: rx.time_between_dose.minute).perform_later(user.sms, rx.med_name)
+#        SendSmsJob.set(wait: rx.time_between_dose.minute).perform_later(user.sms, rx.med_name)
+#        SendSmsJob.set(wait: 1.minute).perform_later(user.sms, rx.med_name)
       end
     end
   end
