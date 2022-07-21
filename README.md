@@ -446,3 +446,4 @@ mutation {
 |John Hennerich|[GitHub](https://github.com/jhennerich) &#124; [LinkedIn](https://www.linkedin.com/in/john-hennerich/)|
 |Max Wagner|[GitHub](https://github.com/MWagner3) &#124; [LinkedIn](https://www.linkedin.com/in/maximilian-wagner3350/)|
 |Zel Imbriaco|[GitHub](https://github.com/zel-imbriaco) &#124; [LinkedIn](https://www.linkedin.com/in/zimbriaco/)|
+|Katy Harrod|[GitHub](https://github.com/mcharrod) &#124; [LinkedIn](https://www.linkedin.com/in/katyharrod/)|
