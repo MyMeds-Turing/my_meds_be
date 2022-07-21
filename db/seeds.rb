@@ -20,7 +20,7 @@ Notification.create!(recipient: 'John H', sent_at: Time.now, notification_type: 
 user = User.create!(first_name: 'John', last_name: 'Lennon', email: 'John.Lennon@email.com',
                     sms: '5551234567', notify: 3)
 
-user2 = User.create!(first_name: 'Paul', last_name: 'McCartney', email: 'Paul.McCartney@email.com',
+user2 = User.create!(first_name: 'Paul', last_name: 'McCartney', email: 'John.Hennerich@email.com',
                      sms: '5551234567', notify: 3)
 
 user3 = User.create!(first_name: 'George', last_name: 'Harrison', email: 'George.Harrison@email.com',

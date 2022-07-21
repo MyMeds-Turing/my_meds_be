@@ -9,14 +9,15 @@ Rails.application.configure do
   config.cache_classes = false
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: 587,
-    user_name: 'apikey',
-    password: ENV['SENDGRID_EMAIL_KEY'],
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.sendgrid.net',
+  #   port: 587,
+  #   user_name: 'apikey',
+  #   password: ENV['SENDGRID_EMAIL_KEY'],
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true
+  # }
   # Do not eager load code on boot.
   config.eager_load = false
 
