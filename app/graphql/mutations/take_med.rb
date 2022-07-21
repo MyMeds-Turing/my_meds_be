@@ -20,17 +20,23 @@ module Mutations
                                        end
 
         rx.update(attributes)
-        user = User.find(rx.user_id)
-        recipient = user.email
-        info = {
-          med_name: rx.med_name,
-          time_of_last_dose: rx.time_of_last_dose,
-          message: 'visit https://mymeds-turing.github.io/my_meds_fe/ to see more',
-          name: user.first_name
-        }
-        MedNotifierMailer.inform(info, recipient).deliver_now
+        send_notification(rx)
         rx
+
       end
+    end
+
+    def send_notification(rx)
+      user = User.find(rx.user_id)
+      recipient = user.email
+      info = {
+        med_name: rx.med_name,
+        time_of_last_dose: rx.time_of_last_dose,
+        message: 'visit https://mymeds-turing.github.io/my_meds_fe/ to see more',
+        name: user.first_name
+      }
+      MedNotifierMailer.inform(info, recipient).deliver_now
+      SendSmsJob.set(wait: 1.minute).perform_later(user.sms, rx.med_name)
     end
   end
 end
