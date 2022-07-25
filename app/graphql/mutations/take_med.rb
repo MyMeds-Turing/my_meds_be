@@ -35,18 +35,19 @@ module Mutations
         message: 'visit https://mymeds-turing.github.io/my_meds_fe/ to see more',
         name: user.first_name
       }
-      if user.notify == 'disabled'
-        return
-      elsif user.notify == 'email_only'
+      case user.notify
+      when 'disabled'
+        nil
+      when 'email_only'
         MedNotifierMailer.inform(info, recipient).deliver_now
-        #MedReminderMailer.inform(info, recipient).deliver_later(wait: rx.time_between_dose.minutes)
-      elsif user.notify == 'sms_only'
-#        SendSmsJob.set(wait: rx.time_between_dose.minutes).perform_later(user.sms, rx.med_name)
-      elsif user.notify == 'both'
+        # MedReminderMailer.inform(info, recipient).deliver_later(wait: rx.time_between_dose.minutes)
+      when 'sms_only'
+      #        SendSmsJob.set(wait: rx.time_between_dose.minutes).perform_later(user.sms, rx.med_name)
+      when 'both'
         MedNotifierMailer.inform(info, recipient).deliver_now
-#        MedReminderMailer.inform(info, recipient).deliver_later(wait: rx.time_between_dose.minutes)
-#        SendSmsJob.set(wait: rx.time_between_dose.minute).perform_later(user.sms, rx.med_name)
-#        SendSmsJob.set(wait: 1.minute).perform_later(user.sms, rx.med_name)
+        #        MedReminderMailer.inform(info, recipient).deliver_later(wait: rx.time_between_dose.minutes)
+        #        SendSmsJob.set(wait: rx.time_between_dose.minute).perform_later(user.sms, rx.med_name)
+        SendSmsJob.set(wait: 1.minute).perform_later(user.sms, rx.med_name)
       end
     end
   end
