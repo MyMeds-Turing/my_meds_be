@@ -9,10 +9,11 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of :email }
     it { should validate_uniqueness_of :email }
     it { should validate_presence_of :notify }
+    it { should validate_presence_of :password }
+    it { should validate_presence_of :password_confirmation }
   end
 
   context 'relationships' do
-    #    it { should have_many(:prescriptions) }
-    #    it { should have_many(:medications).through(:prescription_medications) }
+    it { should have_many(:prescriptions) }
   end
 end
