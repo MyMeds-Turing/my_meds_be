@@ -5,22 +5,12 @@ require 'rails_helper'
 RSpec.describe Prescription, type: :model do
   context 'validations' do
     it { should validate_presence_of :med_name }
-    #    it { should validate_presence_of :time_of_last_dose }
-    #    it { should validate_presence_of :time_of_next_dose }
-    #    it { should validate_presence_of :total_doses }
-    #    it { should validate_presence_of :doses_remaining }
-    #    it { should validate_presence_of :max_daily_doses }
-    #    it { should validate_presence_of :dose }
-    #    it { should validate_presence_of :user_instructions }
-    #    it { should validate_presence_of :additional_instructions }
-    #    it { should validate_presence_of :time_between_dose }
-    #    it { should validate_presence_of :icon }
     it { should validate_presence_of :user_id }
   end
   describe '#set_doses_remaining' do
     it 'auto-populates set_doses_remaining to total_doses' do
       user = User.create!(id: 1, first_name: 'John', last_name: 'L', email: 'John.L@email.com',
-                          sms: '5551234567', notify: 3)
+                          sms: '5551234567', notify: 3, password: 'passwd', password_confirmation: 'passwd')
 
       rx = Prescription.create!(user_id: user.id, med_name: 'Tylenol', total_doses: 500,
                                 max_daily_doses: 6, dose: '200 mg', user_instructions: 'take pill, take with food',
