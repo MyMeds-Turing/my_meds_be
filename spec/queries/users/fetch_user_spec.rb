@@ -6,9 +6,9 @@ RSpec.describe Types::QueryType do
   describe 'display users' do
     it 'can query a single user by id' do
       User.create!(id: 1, first_name: 'John', last_name: 'L', email: 'John.L@email.com',
-                   sms: '5551234567', notify: 3)
-      User.create!(first_name: 'Paul', last_name: 'M', email: 'Paul.M@email.com',
-                   sms: '5551234567', notify: 3)
+                   sms: '5551234567', notify: 3, password: 'passwd', password_confirmation: 'passwd')
+      User.create!(id: 2, first_name: 'Paul', last_name: 'M', email: 'Paul.M@email.com',
+                   sms: '5551234567', notify: 3, password: 'passwd', password_confirmation: 'passwd')
 
       result = MyMedsBeSchema.execute(query).as_json
       expect(result['data']['fetchUser'].count).to eq(9)

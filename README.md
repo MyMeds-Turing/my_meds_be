@@ -436,6 +436,42 @@ mutation {
   }
 }
 ```
+
+5. [**addUser**](#addUser) *creates a user*
+* Example Query
+```
+mutation {
+        addUser(input: { params: {
+          firstName: "John",
+          lastName: "Lennon",
+          email: "john.lennon@email.com",
+          password: "passwd",
+          passwordConfirmation: "passwd",
+          sms: "5551234567",
+          notify: 2
+          }} ) {
+    user{ id
+    email
+    notify
+    }
+    }
+    }
+```
+* Example Response
+```
+{
+  "data": {
+    "addUser": {
+      "user": {
+        "id": "6",
+        "email": "john.lennon@email.com",
+        "notify": 0
+      }
+    }
+  }
+}
+```
+
 ## **Future Iteration Goals**
 * SMS and email reminders when it is time for users to take their medication.
 * SMS and email reminders when users are running low on stock of a specific medication and need to get a refill from their doctor.
