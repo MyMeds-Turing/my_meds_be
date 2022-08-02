@@ -21,7 +21,7 @@ user = User.create!(first_name: 'John', last_name: 'Lennon', email: 'John.Lennon
                     sms: '5551234567', notify: 0, password: 'passwd', password_confirmation: 'passwd')
 
 user2 = User.create!(first_name: 'Paul', last_name: 'McCartney', email: 'John.Hennerich@gmail.com',
-                     sms: '5551234567', notify: 2, password: 'passwd', password_confirmation: 'passwd')
+                     sms: '5551234567', notify: 1, password: 'passwd', password_confirmation: 'passwd')
 
 user3 = User.create!(first_name: 'George', last_name: 'Harrison', email: 'George.Harrison@email.com',
                      sms: '5551234567', notify: 0, password: 'passwd', password_confirmation: 'passwd')
