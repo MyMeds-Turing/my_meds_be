@@ -20,7 +20,7 @@ Notification.create!(recipient: 'John H', sent_at: Time.now, notification_type: 
 user = User.create!(first_name: 'John', last_name: 'Lennon', email: 'John.Lennon@email.com',
                     sms: '5551234567', notify: 0, password: 'passwd', password_confirmation: 'passwd')
 
-user2 = User.create!(first_name: 'Paul', last_name: 'McCartney', email: 'John.Hennerich@gmail.com',
+user2 = User.create!(first_name: 'MyMeds', last_name: 'Turing', email: 'MyMeds.turing@gmail.com',
                      sms: '5551234567', notify: 1, password: 'passwd', password_confirmation: 'passwd')
 
 user3 = User.create!(first_name: 'George', last_name: 'Harrison', email: 'George.Harrison@email.com',
@@ -31,6 +31,8 @@ user4 = User.create!(first_name: 'Ringo', last_name: 'Starr', email: 'Ringo.Star
 
 user5 = User.create!(first_name: 'Max', last_name: 'Tester', email: 'maw@gmail.com',
                      sms: '1234567890', notify: 2, password: 'passwd', password_confirmation: 'passwd')
+user6 = User.create!(first_name: 'Paul', last_name: 'McCartney', email: 'John.Hennerich@gmail.com',
+                     sms: '5551234567', notify: 1, password: 'passwd', password_confirmation: 'passwd')
 
 Prescription.create!(user_id: user5.id, med_name: 'Tylenol', time_of_last_dose: Time.current,
                      time_of_next_dose: 1.days.from_now, total_doses: 500, doses_remaining: 500,
