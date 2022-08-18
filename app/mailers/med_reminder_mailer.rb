@@ -6,6 +6,7 @@ class MedReminderMailer < ApplicationMailer
     @med_name = info[:med_name]
     @time_of_last_dose = info[:time_of_last_dose]
     @name = info[:name]
+    @id = info[:id]
 
     mail(
       to: recipient,
