@@ -9,7 +9,7 @@ class MedNotifierMailer < ApplicationMailer
 
     mail(
       to: recipient,
-      subject: "Hello #{@name}, You took #{@med_name} at #{@time_of_last_dose}"
+      subject: "Hello #{@name}, You took #{@med_name} at #{@time_of_last_dose.strftime "%m/%d/%Y %H:%M"}"
     )
   end
 end

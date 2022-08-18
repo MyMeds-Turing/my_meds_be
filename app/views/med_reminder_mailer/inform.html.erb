@@ -1,9 +1,11 @@
-<%= @med_name %> was last taken at <%= @time_of_last_dose %><br>
+<%= @med_name %> was last taken at <%= @time_of_last_dose.strftime "%m/%d/%Y %H:%M" %><br>
 <h2><%= @message %></h2>
 <hr>
+<h2> Visit MyMeds or click below once you have taken your next dose </h2>
 <form method="post" action="https://my-meds-be.herokuapp.com/graphql">
         <input type="hidden" name="json_format"
          value="&quot;mutation&quot;: &quot;{ takeMed(input: {id: <%= @id %> }) {id}&quot;,
 "variables":  {}}"/>
  <input type="submit" value="I took my <%= @med_name %>"
 </form>
+<hr>

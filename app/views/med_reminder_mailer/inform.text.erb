@@ -1,2 +1,2 @@
-<%= @med_name %> was last taken at <%= @time_of_last_dose %><br>
+<%= @med_name %> was last taken at <%= @time_of_last_dose.strftime "%m/%d/%Y %H:%M" %><br>
 <%= @message %>
